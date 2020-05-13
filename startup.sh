@@ -14,3 +14,6 @@ export NVM_DIR="$HOME/.nvm"
 \[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 nvm install node
+
+sudo firewall-cmd --add-port=3000/tcp
+sudo firewall-cmd --permanent --add-port=3000/tcp

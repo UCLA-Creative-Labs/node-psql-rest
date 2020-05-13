@@ -1,3 +1,3 @@
 #!/bin/bash
 
-npm i express pg
+npm i express pg nodemon
