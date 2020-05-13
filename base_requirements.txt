@@ -1,0 +1,9 @@
+git
+postgresql
+postgresql-devel
+postgresql-server
+python3
+python-pip
+gcc-c++ 
+make
+yarn
