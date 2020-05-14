@@ -7,7 +7,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
 sudo rpm --import https://dl.yarnpkg.com/rpm/pubkey.gpg
 
-sudo yum install -y $(cat base_requirements.txt)
+sudo yum install -y $(cat yum_requirements.txt)
 
 source ~/.bashrc
 nvm install node
