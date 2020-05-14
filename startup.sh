@@ -9,11 +9,9 @@ sudo rpm --import https://dl.yarnpkg.com/rpm/pubkey.gpg
 
 sudo yum install -y $(cat base_requirements.txt)
 
-export NVM_DIR="$HOME/.nvm"
-\[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-\[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
+source ~/.bashrc
 nvm install node
+npm i express pg nodemon
 
 sudo firewall-cmd --add-port=3000/tcp
 sudo firewall-cmd --permanent --add-port=3000/tcp
