@@ -1,6 +1,6 @@
 # PEN REST API
 
-PEN stack to demo a REST API for web applications. REST API means REpresentational State Transfer and is an architectual style for designing web applications that require networking between client and application servers. A RESTful design allows for a separation between client and server and is visible, reliable and scalable. 
+PEN stack to demo a REST API for web applications. REST API means ```REpresentational State Transfer``` and is an architectual style for designing web applications that require networking between client and application servers. A RESTful design allows for a separation between client and server and is visible, reliable and scalable. 
 
 **Postgres**    -   Open-source relational database management system (RDBMS). https://www.postgresql.org/
 
@@ -8,7 +8,7 @@ PEN stack to demo a REST API for web applications. REST API means REpresentation
 
 **Node.js**     -   Open-source, JavaScript runtime environment that executes code outside of a browser https://nodejs.org/en/
 
-We will take advantage of a module called ```node-postgres``` to have our node.js application easily interface with our Postgres server.
+We will take advantage of a module called ```node-postgres``` to have our ```node.js``` application easily interface with our Postgres server.
 
 # Set Up
 
