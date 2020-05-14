@@ -13,12 +13,12 @@ sudo rpm --import https://dl.yarnpkg.com/rpm/pubkey.gpg
 # All our yum requirements are in the yum_requirements.txt 
 sudo yum install -y $(cat yum_requirements.txt)
 
-# Sourcing the bash intializing script to export nvm to $PATH
-source ~/.bashrc
-
 # Switch to the correct node version
 # Run node --version or npm --version to ensure its not 8.1
 nvm install node
+
+# Sourcing the bash intializing script to export nvm to $PATH
+source ~/.bashrc
 
 # Installs to node modules 
 # express for node.js framework
