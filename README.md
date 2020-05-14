@@ -16,6 +16,8 @@ Unfortunately, OCI instances come with empty images that have no installed tools
 
 ## Installing Git and Obtaining this Repository
 
+This git repo has the base template for quickly building up a 
+
 ```
 Install git:
 
@@ -29,19 +31,54 @@ Clone the repository:
 
 ## Installing Dependencies and Requirements
 
+We have a script to download all the stuff you need.
+
+### Run
+
 ```
 Install Dependencies, nvm, and open the firewall for port 3000:
 
     bash start.sh
 ```
 
-## Postgres Database 
+### Breakdown
+
+- update yum
+- download nvm (node version manager)
+    - use this to switch between node versions
+    - run ```nvm install <node version number>``` for a specific version
+    - run ```nvm use <node version number>``` to switch node version
+    - run ```node --version``` to check
+- download yarn
+- install requirements 
+- install node dependencies
+- allow port access to 3000
+
+Extensive documenation in ```start.sh```.
+
+## Initializing Postgres Database 
+
+We have a script to initialize a postgres server very quickly.
+
+### Run
 
 ```
 Initialize postgres database:
 
     bash psql.sh
 ```
+
+### Breakdown
+
+- init postgres
+- start postgres
+- create a user (call it 'opc' or whatever you want to use in ```queries.js```)
+- create a database (call it 'api' or whatever you want to use in ```queries.js```)
+- set password for user (user currently is defaulted to ```opc``` with a default password of ```test``` in ```queries.js```)
+- create a table called ```users``` 
+- populate ```users``` table with our bois Jerry and George
+
+Extensive documenation in ```psql.sh```.
 
 ## Changing Postgres Authentication Method
 
@@ -69,11 +106,15 @@ Replace the following with this:
     #host    all             all             ::1/128                 ident
     host    all             all             ::1/128                 md5
 
-Finally run this outside of sudo:
+Finally run this outside of root user:
 
     psql -d <database_name> -c "SELECT pg_reload_conf();"
 ```
 # Usage
+
+Time to get this bad boi working. We have some base code here to show you how to navigate a RESTful API but the main benefits is to simply just download all the dependencies required to start.
+
+The following documentation is to show you how to start up a server and prove that it works.
 
 ```
 Start your node.js development server:
@@ -133,34 +174,14 @@ psql -d <name of database> -c 'psql code;'      # Allows you to run psql code fo
 ## Inside Postgres Connection
 Some commands to reference when inside the psql connect.
 
-**Remeber to add ';' to the end of your commands or they will not register!**
+**Remember to add ';' to the end of your commands or they will not register!**
 
-### See your connection info
 ```
-postgres=# \conninfo
-```
-
-### List the databases
-```
-postgres=# \list
-```
-
-### List all tables in current database
-```
-postgres=# \dt
-```
-
-### List all users
-```
-postgres=# \du
-```
-
-### Connect to a new databse
-```
-postgres=# \c <name of database>
-```
-
-### Exit psql connection
-```
-postgres=# \q           OR            CNTRL+D
+postgres=# \conninfo                    # See your connection info
+postgres=# \list                        # List the databases
+postgres=# \dt                          # List all tables in current database
+postgres=# \du                          # List all users
+postgres=# \c <name of database>        # Connect to a new database
+postgres=# \password <username>         # Change password of selected user
+postgres=# \q                           # Exit psql connection
 ```
