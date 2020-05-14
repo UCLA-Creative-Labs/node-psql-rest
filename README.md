@@ -12,7 +12,7 @@ We will take advantage of a module called ```node-postgres``` to have our ```nod
 
 # Set Up
 
-Unfortunately, OCI instances come with empty images that have no installed tools in it. OCI base images are essentially CentOS and use RPM to download modules. Whenver you need to download things always use the command ```sudo yum install -y <name of package>```.
+Unfortunately, OCI instances come with empty images that have no installed tools in it. OCI base images are essentially CentOS and use RPM to download modules. Whenever you need to download things always use the command ```sudo yum install -y <name of package>```.
 
 ## Installing Git and Obtaining this Repository
 
