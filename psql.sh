@@ -10,7 +10,7 @@ sudo systemctl start postgresql
 sudo systemctl enable postgresql
 
 # create a user: recommend to call it 'opc' because queries.js uses 'opc'as user
-sudo -u postgres createuser --interactive
+sudo -u postgres createuser --interactive - P
 
 # create a database called 'api': recommended becasue querires.js uses 'api' as database
 sudo -u postgres createdb api
@@ -25,7 +25,7 @@ username="opc"
  
 #Execute few psql commands: 
 #Note: you can also add -h hostname -U username in the below commands. 
-psql -d $database -U $username -c "\password" 
+# psql -d $database -U $username -c "\password" 
 psql -d $database -U $username -c "CREATE TABLE users (ID SERIAL PRIMARY KEY, name VARCHAR(30), email VARCHAR(30));"
 psql -d $database -U $username -c "INSERT INTO users (name, email) VALUES ('Jerry', 'jerry@example.com'), ('George', 'george@example.com');"
 psql -d $database -U $username -c "SELECT * FROM users"
