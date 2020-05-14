@@ -43,7 +43,6 @@ Initialize postgres database:
     bash psql.sh
 ```
 
-
 ## Changing Postgres Authentication Method
 
 Default authentication method is ```ident``` which requires an ident server to authenticate the user. Instead we switch to ```md5``` which is simply a hashed password authentication.
@@ -74,7 +73,44 @@ Finally run this outside of sudo:
 
     psql -d <database_name> -c "SELECT pg_reload_conf();"
 ```
+# Usage
 
+```
+Start your node.js development server:
+
+    npm start
+
+Go to your VM instance's public ip address at specificied port in ```start.sh```. (Default is 3000)
+
+    http://pub.lic.ip.add:3000/
+
+You should see something like this:
+
+    {
+        info: "Node.js, Express, and Postgres API"
+    }
+```
+```
+Now simulate a GET request, go to:
+
+    http://pub.lic.ip.add:3000/users
+
+You should see something like this:
+
+    [
+        {
+            "id": 1,
+            "name": "Jerry",
+            "email": "jerry@example.com"
+        },
+        {
+            "id": 2,
+            "name": "George",
+            "email": "george@example.com"
+        }
+    ]
+```
+Congrats! You know have a backend server!
 
 # Helpful Postgres Commands
 
