@@ -185,3 +185,16 @@ postgres=# \c <name of database>        # Connect to a new database
 postgres=# \password <username>         # Change password of selected user
 postgres=# \q                           # Exit psql connection
 ```
+
+# Credits
+
+Author: Bryan Pan
+[Github: ```@bryanpan342```](https://github.com/bryanpan342)
+[Instagram: ```@bryanthesnob```](https://www.instagram.com/bryanthesnob)
+[LinkedIn: ```@blpan```](https://www.linkedin.com/in/blpan/)
+[Blog: The Grounds of the City](https://www.groundsofthecity.com)
+
+## Code References
+Guide for setting up [node.js and postgresql](https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/)
+Guide for setting up [node.js and mongoDB](https://github.com/SivakumarBalu/rest-api-bears)
+Oracle Docs on [Security](https://docs.cloud.oracle.com/en-us/iaas/Content/Network/Concepts/securityrules.htm#stateful)
