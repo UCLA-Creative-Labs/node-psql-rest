@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Let's postgres run commands
+sudo chmod og+rX /home /home/opc
+
 # init postgres
 sudo postgresql-setup initdb
 
@@ -10,7 +13,7 @@ sudo systemctl start postgresql
 sudo systemctl enable postgresql
 
 # create a user: recommend to call it 'opc' because queries.js uses 'opc'as user
-sudo -u postgres createuser --interactive - P
+sudo -u postgres createuser --interactive -P
 
 # create a database called 'api': recommended becasue querires.js uses 'api' as database
 sudo -u postgres createdb api

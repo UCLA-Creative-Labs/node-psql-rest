@@ -109,6 +109,11 @@ Replace the following with this:
 Finally run this outside of root user:
 
     psql -d <database_name> -c "SELECT pg_reload_conf();"
+
+If you edit the postgres.conf file then run this:
+
+    sudo systemctl restart postgresql
+
 ```
 # Usage
 
