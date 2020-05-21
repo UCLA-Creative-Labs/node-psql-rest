@@ -16,7 +16,7 @@ Unfortunately, OCI instances come with empty images that have no installed tools
 
 ## Installing Git and Obtaining this Repository
 
-This git repo has the base template for quickly building up a 
+This git repo has the base template for quickly building up a node.js application server.
 
 ```
 Install git:
